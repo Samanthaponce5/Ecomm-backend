@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_203211) do
+ActiveRecord::Schema.define(version: 2020_05_21_214516) do
 
   create_table "orders", force: :cascade do |t|
     t.string "confirmation_number"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_203211) do
     t.integer "seller_id"
     t.integer "buyer_id"
     t.string "title"
-    t.string "type"
+    t.string "type_of"
     t.string "category"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
