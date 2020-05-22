@@ -9,6 +9,7 @@
 User.destroy_all
 Order.destroy_all
 Product.destroy_all
+Payment.destroy_all
 
 user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
 user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
@@ -27,4 +28,9 @@ product1 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sampl
 product2 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 2',type_of:'Nature',category:'landscape',price:100.00)
 product3 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 3',type_of:'Nature',category:'landscape',price:100.00)
 product4 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 4',type_of:'Nature',category:'landscape',price:100.00)
-# rename the type column 
+
+payment1 = Payment.create(order_id:Order.all.first.id)
+payment2 = Payment.create(order_id:Order.all.second.id)
+payment3 = Payment.create(order_id:Order.all.third.id)
+payment4 = Payment.create(order_id:Order.all.fourth.id)
+payment5 = Payment.create(order_id:Order.all.fifth.id)
