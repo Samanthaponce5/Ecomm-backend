@@ -32,23 +32,25 @@ ActiveRecord::Schema.define(version: 2020_05_22_022940) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+ActiveRecord::Schema.define(version: 2020_05_22_233536) do
 
   create_table "orders", force: :cascade do |t|
     t.string "confirmation_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "product_id"
+    t.integer "user_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "seller_id"
-    t.integer "buyer_id"
+    t.integer "user_id"
     t.string "title"
     t.string "type_of"
     t.string "category"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|

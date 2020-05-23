@@ -1,6 +1,26 @@
 class ProductsController < ApplicationController
+    def index
+        products = Product.all
+        render json: products, except: [:created_at, :updated_at]
+    end
+    
+    def show
+        product = Product.find_by(id: params[:id])
+        if product
+            render json: product,except:[:created_at,:updated_at]
+        else
+            render json: { message: 'No product found with that id' }
+        end
+    end 
 
-#   def create 
+
+
+
+
+
+
+
+    #   def create 
 #     image = Cloudinary::Uploader.upload(params[:image])
 #     video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
 #     product = Product.create(image: image["url"], video: video["url"])
@@ -12,29 +32,27 @@ class ProductsController < ApplicationController
 #   render json: Product.where
 # end
 
-def create
+# def create
 
 
-  @product = Product.create(product_params())
-  respond_to_product()
-end
+#   @product = Product.create(product_params())
+#   respond_to_product()
+# end
 
-private
+# private
 
-def product_params
-  params.permit( :title, :image)
-end
+# def product_params
+#   params.permit( :title, :image)
+# end
 
-private
+# private
 
-def respond_to_product()
-  if @product.valid?()
-    product_serializer = ProductSerializer.new(product: @product)
-    render json: product_serializer.serialize_new_product()
-  else
-    render json: { errors: product.errors }, status: 400
-  end
-end
-
-    
+# def respond_to_product()
+#   if @product.valid?()
+#     product_serializer = ProductSerializer.new(product: @product)
+#     render json: product_serializer.serialize_new_product()
+#   else
+#     render json: { errors: product.errors }, status: 400
+#   end
+# end
 end
