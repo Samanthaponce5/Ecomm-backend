@@ -20,7 +20,7 @@ end
 
   def create 
     user = User.create(first_name: params[:user][:first_name], password: params[:user][:password])
-    render json: user 
+    render json:user 
   end
 
   def update 

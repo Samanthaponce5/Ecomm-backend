@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
     # render json: product
 
     product = Product.create(title: params[:product][:title], category: params[:product][:category])
-    render json: Product 
+    render json: product 
     end
 
     def update 
