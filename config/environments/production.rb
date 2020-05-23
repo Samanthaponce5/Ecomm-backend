@@ -4,9 +4,6 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-
-  Rails.application.routes.default_url_options = { host: "http://localhost:4000" }
-
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -32,7 +29,15 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :local
+
+
+#========================================================================================
+  # Rails.application.routes.default_url_options = { host: "http://localhost:4000" }
+  # config.active_storage.service = :cloudinary
+#========================================================================================
+
+
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
