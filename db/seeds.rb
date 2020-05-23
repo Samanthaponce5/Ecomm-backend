@@ -9,7 +9,6 @@
 User.destroy_all
 Order.destroy_all
 Product.destroy_all
-Payment.destroy_all
 
 user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
 user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
@@ -18,19 +17,14 @@ user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccar
 user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
 user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
 
-order1 = Order.create(confirmation_number: rand(1000...5000))
-order2 = Order.create(confirmation_number: rand(1000...5000))
-order3 = Order.create(confirmation_number: rand(1000...5000))
-order4 = Order.create(confirmation_number: rand(1000...5000))
-order5 = Order.create(confirmation_number: rand(1000...5000))
+product1 = Product.create(user_id: user5.id, title:'Title 1',type_of:'Nature',category:'landscape',price:100.00, image:'https://www.bleaq.com/wp-content/uploads/katharina-jung-intro.jpg')
+product2 = Product.create(user_id: user4.id, title:'Title 2',type_of:'Nature',category:'landscape',price:100.00, image:'https://moody-presets.com/wp-content/uploads/2018/01/naturel-moody-after-3.jpg')
+product3 = Product.create(user_id: user3.id, title:'Title 3',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/93/c7/43/93c743fe032830d77fd6cda1679a6aac.jpg')
+product4 = Product.create(user_id: user2.id, title:'Title 4',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
+product5 = Product.create(user_id: user1.id, title:'Title 5',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
 
-product1 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 1',type_of:'Nature',category:'landscape',price:100.00, image:'https://www.bleaq.com/wp-content/uploads/katharina-jung-intro.jpg')
-product2 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 2',type_of:'Nature',category:'landscape',price:100.00, image:'https://moody-presets.com/wp-content/uploads/2018/01/naturel-moody-after-3.jpg')
-product3 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 3',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/93/c7/43/93c743fe032830d77fd6cda1679a6aac.jpg')
-product4 = Product.create(order_id:Order.all.sample.id,seller_id: User.all.sample.id, buyer_id:User.all.sample.id,title:'Title 4',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
-
-payment1 = Payment.create(order_id:Order.all.first.id)
-payment2 = Payment.create(order_id:Order.all.second.id)
-payment3 = Payment.create(order_id:Order.all.third.id)
-payment4 = Payment.create(order_id:Order.all.fourth.id)
-payment5 = Payment.create(order_id:Order.all.fifth.id)
+order1 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user1.id)
+order2 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user2.id)
+order3 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user3.id)
+order4 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user4.id)
+order5 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user5.id)
