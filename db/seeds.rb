@@ -10,12 +10,20 @@ User.destroy_all
 Order.destroy_all
 Product.destroy_all
 
-user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
-user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
-user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
-user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
-user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
-user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
+samantha = User.create(first_name: 'Samantha', password:'password')
+
+samantha.avatar.attach(
+    io: File.open('/Users/samanthaponce5/Downloads/hope.jpeg'),
+    filename:'hope.jpeg',
+    content_type: 'image/jpeg'
+)
+
+# user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
+# user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
+# user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
+# user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
+# user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
+# user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
 
 order1 = Order.create(confirmation_number: rand(1000...5000))
 order2 = Order.create(confirmation_number: rand(1000...5000))
