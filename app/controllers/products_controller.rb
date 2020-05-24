@@ -22,8 +22,8 @@ class ProductsController < ApplicationController
     #   product = Product.create(title: params[:product][:title], type_of: params[:poduct][:type_of],category: params[:product][:category],price: params[:product][:price])
     # render json: product
 
-    product = Product.create(title: params[:product][:title], category: params[:product][:category])
-    render json: Product 
+    product = Product.create(product_params)
+    render json: product 
     end
 
     def update 
@@ -33,12 +33,15 @@ class ProductsController < ApplicationController
       image_url=rails_blob_path(product.image)
       # byebug
       render json:{product: product, image_url: image_url}
-  
+      
   
     end
 
 
-# private
+private
+def product_params
+  params.require(:product).permit(:title, :type_of, :category,:price )
+end
 
 # def product_params
 #   params.require(:product).permit(:title, :type_of, :category,:price ,:image)
