@@ -7,37 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Order.destroy_all
 Product.destroy_all
+Order.destroy_all
 
-samantha = User.create(first_name: 'Samantha',last_name:'Ponce',username:'samanthaponce', password:'password')
+# samantha = User.create(first_name: 'Samantha',last_name:'Ponce',username:'samanthaponce', password:'password')
 
-samantha.avatar.attach(
-    io: File.open('./public/avatar/samantha.jpeg'),
-    filename:'samantha.jpeg',
-    content_type: 'image/jpeg'
-)
 
-johnson = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
-johnson.avatar.attach(
-    io: File.open('./public/avatar/johnson.jpg'),
-    filename:'johnson.jpg',
-    content_type:'image/jpg'
-)
-# user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
-# user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
-# user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
-# user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
-# user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
+user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
+user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
+user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
+user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
+user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
+user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
 
-# product1 = Product.create(user_id: user5.id, title:'Title 1',type_of:'Nature',category:'landscape',price:100.00, image:'https://www.bleaq.com/wp-content/uploads/katharina-jung-intro.jpg')
-# product2 = Product.create(user_id: user4.id, title:'Title 2',type_of:'Nature',category:'landscape',price:100.00, image:'https://moody-presets.com/wp-content/uploads/2018/01/naturel-moody-after-3.jpg')
-# product3 = Product.create(user_id: user3.id, title:'Title 3',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/93/c7/43/93c743fe032830d77fd6cda1679a6aac.jpg')
-# product4 = Product.create(user_id: user2.id, title:'Title 4',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
-# product5 = Product.create(user_id: user1.id, title:'Title 5',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
+product1 = Product.create(user_id: user5.id, title:'Title 1',type_of:'Nature',category:'landscape',price:100.00, image:'https://www.bleaq.com/wp-content/uploads/katharina-jung-intro.jpg')
+product2 = Product.create(user_id: user4.id, title:'Title 2',type_of:'Nature',category:'landscape',price:100.00, image:'https://moody-presets.com/wp-content/uploads/2018/01/naturel-moody-after-3.jpg')
+product3 = Product.create(user_id: user3.id, title:'Title 3',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/93/c7/43/93c743fe032830d77fd6cda1679a6aac.jpg')
+product4 = Product.create(user_id: user2.id, title:'Title 4',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
+product5 = Product.create(user_id: user1.id, title:'Title 5',type_of:'Nature',category:'landscape',price:100.00, image:'https://i.pinimg.com/originals/ce/73/71/ce7371774f709c1a28a13ffbb61f858b.jpg')
 
-# order1 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user1.id)
-# order2 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user2.id)
-# order3 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user3.id)
-# order4 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user4.id)
-# order5 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user5.id)
+order1 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user1.id)
+order2 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user2.id)
+order3 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user3.id)
+order4 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user4.id)
+order5 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user5.id)
