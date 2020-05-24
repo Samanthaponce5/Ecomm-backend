@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-   resources :products, only: [:create, :index]
-
- 
-
-
+resources :products, only: [:create, :index]
   resources :payments
   resources :products
   resources :orders

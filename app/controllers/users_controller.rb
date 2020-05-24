@@ -2,17 +2,21 @@ class UsersController < ApplicationController
 
 def index
 users = User.all
-render json: users
+  if users
+    render json: users
+  else render json:{status: 500, message: "No users found"}
+  end
 end
 
 
 def show
-user = User.find_by(first_name: params[:first_name])
+user = User.find_by(username: params[:username])
 avatar = rails_blob_path(user.avatar)
-if user.password == params[:password]
+# if (user.password == params[:password])
+if(user && user.authenticated(params[:password]))
     render json:{ user: user, avatar:avatar }
 else
-    render json: {message: 'This user is not authenticated'}
+    render json: {message: 'invalid username'}
 end
 
 
@@ -28,7 +32,6 @@ end
     user = User.find(params[:id])
     user.update(avatar: params[:avatar])
     avatar_url=rails_blob_path(user.avatar)
-    # byebug
     render json:{user: user, avatar_url: avatar_url}
 
 
