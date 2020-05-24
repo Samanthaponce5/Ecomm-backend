@@ -10,15 +10,20 @@ User.destroy_all
 Order.destroy_all
 Product.destroy_all
 
-samantha = User.create(first_name: 'Samantha', password:'password')
+samantha = User.create(first_name: 'Samantha',last_name:'Ponce',username:'samanthaponce', password:'password')
 
 samantha.avatar.attach(
-    io: File.open('/Users/samanthaponce5/Downloads/hope.jpeg'),
-    filename:'hope.jpeg',
+    io: File.open('./public/avatar/samantha.jpeg'),
+    filename:'samantha.jpeg',
     content_type: 'image/jpeg'
 )
 
-# user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
+johnson = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
+johnson.avatar.attach(
+    io: File.open('./public/avatar/johnson.jpg'),
+    filename:'johnson.jpg',
+    content_type:'image/jpg'
+)
 # user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
 # user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
 # user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
