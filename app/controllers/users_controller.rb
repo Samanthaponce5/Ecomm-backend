@@ -11,10 +11,11 @@ end
 
 def show
 user = User.find_by(username: params[:username])
-avatar = rails_blob_path(user.avatar)
-# if (user.password == params[:password])
-if(user && user.authenticated(params[:password]))
-    render json:{ user: user, avatar:avatar }
+
+
+if user.password == params[:password]
+    render json:{ user: user}
+
 else
     render json: {message: 'invalid username'}
 end
@@ -23,19 +24,29 @@ end
   end
 
   def create 
-    user = User.create(first_name: params[:user][:first_name], password: params[:user][:password])
-    render json: user 
+    user = User.create(user_params)
+    render json:user 
   end
 
   def update 
     
     user = User.find(params[:id])
-    user.update(avatar: params[:avatar])
-    avatar_url=rails_blob_path(user.avatar)
-    render json:{user: user, avatar_url: avatar_url}
+
+   
+    # byebug
+    render json:{user: user}
 
 
   end
+
+
+
+  private
+  def user_params
+params.require(:user).permit(:first_name, :last_name, :username, :password)
+  end
+end
+
 
 
 
@@ -52,5 +63,3 @@ end
 #         render json: { message: 'No user found with that id' }
 #     end
 # end 
-
-end

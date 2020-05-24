@@ -19,11 +19,13 @@ class ProductsController < ApplicationController
       # product = Product.create(product_params)
       # render json: product 
 
-    #   product = Product.create(title: params[:product][:title], type_of: params[:poduct][:type_of],category: params[:product][:category],price: params[:product][:price])
-    # render json: product
+      product = Product.create(product_params)
+    render json: product
 
-    product = Product.create(product_params)
-    render json: product 
+
+    # product = Product.create(title: params[:product][:title], category: params[:product][:category])
+    # render json: product 
+
     end
 
     def update 
@@ -43,9 +45,9 @@ def product_params
   params.require(:product).permit(:title, :type_of, :category,:price )
 end
 
-# def product_params
-#   params.require(:product).permit(:title, :type_of, :category,:price ,:image)
-# end
+def product_params
+  params.require(:product).permit(:title, :type_of, :category,:price )
+end
 
 
     #   def create 
