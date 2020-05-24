@@ -2,17 +2,22 @@ class UsersController < ApplicationController
 
 def index
 users = User.all
-render json: users
+  if users
+    render json: users
+  else render json:{status: 500, message: "No users found"}
+  end
 end
 
 
 def show
 user = User.find_by(username: params[:username])
 
+
 if user.password == params[:password]
     render json:{ user: user}
+
 else
-    render json: {message: 'This user is not authenticated'}
+    render json: {message: 'invalid username'}
 end
 
 
@@ -26,12 +31,14 @@ end
   def update 
     
     user = User.find(params[:id])
+
    
     # byebug
     render json:{user: user}
 
 
   end
+
 
 
   private
