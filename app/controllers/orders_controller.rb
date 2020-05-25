@@ -12,4 +12,14 @@ class OrdersController < ApplicationController
             render json: { message: 'No order found with that id' }
         end
     end 
+
+    def create 
+        order = Order.create(order_params)
+        render json: order
+    end
+
+    private
+    def order_params
+        params.require(:order).permit(:confirmation_number,:product_id,:user_id)
+    end
 end
