@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
     def update 
       product = Product.find(params[:id])
       product.update(image: params[:image])
+      image_url=rails_blob_path(product.image)
+
       render json:{product: product, image_url: image_url}
     end
 
