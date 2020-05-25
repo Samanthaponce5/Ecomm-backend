@@ -27,6 +27,11 @@ product4 = Product.create(user_id: user2.id, title:'Title 4',type_of:'Nature',ca
 product5 = Product.create(user_id: user1.id, title:'Title 5',type_of:'Nature',category:'landscape',price:100.00, image:'https://capturelandscapes.com/wp-content/uploads/2017/03/Mists-of-Rivendell-1068x713.jpg')
 product6 = Product.create(user_id: user6.id, title:'Title 6',type_of:'Nature',category:'landscape',price:100.00, image:'https://artofvisuals.com/wp-content/uploads/2017/10/@shortstache-4.jpg')
 product7 = Product.create(user_id: user5.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100.00, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_12.jpg')
+product8 = Product.create(user_id: user4.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100.00, image:'https://static1.squarespace.com/static/5bcb3fd0815512423060140e/5bcb9d26c1c75eca9eadd56e/5bcb9d7dc1c75eca9eaddd8f/1540070781971/IMG_0862.jpg?format=original')
+product9 = Product.create(user_id: user3.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100.00, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_2.jpg')
+product10 = Product.create(user_id: user2.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100.00, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_3.jpg')
+product11 = Product.create(user_id: user1.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100.00, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_11.jpg')
+product12 = Product.create(user_id: user1.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100.00, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_7.jpg')
 
 order1 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user1.id)
 order2 = Order.create(confirmation_number: rand(1000...5000),product_id: Product.all.sample.id, user_id: user2.id)
