@@ -22,8 +22,10 @@ gem 'hirb', '~> 0.7.3'
 
 gem 'active_model_serializers'
 
+gem 'jwt'
 
-gem 'cloudinary'
+
+# gem 'cloudinary'
 
 
 # Reduces boot times through caching; required in config/boot.rb
