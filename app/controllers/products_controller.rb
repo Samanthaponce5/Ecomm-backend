@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
         product = Product.find_by(id: params[:id])
         if product
           render json: product
+  
             # render json: product,except:[:created_at,:updated_at]
         else
             render json: { message: 'No product found with that id' }
