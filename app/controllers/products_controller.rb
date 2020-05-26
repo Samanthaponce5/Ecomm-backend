@@ -7,7 +7,8 @@ class ProductsController < ApplicationController
     def show
         product = Product.find_by(id: params[:id])
         if product
-          render json:{ product: product, image:image }
+          render json: product
+  
             # render json: product,except:[:created_at,:updated_at]
         else
             render json: { message: 'No product found with that id' }
@@ -19,13 +20,13 @@ class ProductsController < ApplicationController
       render json: product
     end
 
-    def update 
-      product = Product.find(params[:id])
-      product.update(image: params[:image])
-      image_url=rails_blob_path(product.image)
+    # def update 
+    #   product = Product.find(params[:id])
+    #   product.update(image: params[:image])
+    #   image_url=rails_blob_path(product.image)
 
-      render json:{product: product, image_url: image_url}
-    end
+    #   render json:{product: product, image_url: image_url}
+    # end
 
 
   private
