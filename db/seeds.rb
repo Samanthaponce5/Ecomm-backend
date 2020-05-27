@@ -13,12 +13,12 @@ Order.destroy_all
 # samantha = User.create(first_name: 'Samantha',last_name:'Ponce',username:'samanthaponce', password:'password')
 
 
-user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
-user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
-user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
-user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
-user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
-user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
+user1 = User.create(first_name:'Johnson',last_name:'Kow',username:'johnsonkow',password:'1234')
+user2 = User.create(first_name:'Samantha',last_name:'Ponce',username:'samanthaponce',password:'1234')
+user3 = User.create(first_name:'Diana',last_name:'Ponce',username:'dianaponce',password:'1234')
+user4 = User.create(first_name:'Caryn',last_name:'Mccarthy',username:'carynmccarthy',password:'1234')
+user5 = User.create(first_name:'Jacky',last_name:'Lin',username:'jackylin',password:'1234')
+user6 = User.create(first_name:'Joseph',last_name:'Cha',username:'josephcha',password:'1234')
 
 product1 = Product.create(user_id: user5.id, title:'Title 1',type_of:'Nature',category:'landscape, moody, sade, dress, gloomy',price:100, image:'https://www.bleaq.com/wp-content/uploads/katharina-jung-intro.jpg')
 product3 = Product.create(user_id: user3.id, title:'Title 3',type_of:'Nature',category:'landscape,river,lake,bali,birds,moody',price:50, image:'https://i.pinimg.com/originals/93/c7/43/93c743fe032830d77fd6cda1679a6aac.jpg')
