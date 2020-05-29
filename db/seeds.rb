@@ -13,12 +13,13 @@ Order.destroy_all
 # samantha = User.create(first_name: 'Samantha',last_name:'Ponce',username:'samanthaponce', password:'password')
 
 
-user1 = User.create(first_name:'johnson',last_name:'kow',username:'johnsonkow',password:'1234')
-user2 = User.create(first_name:'samantha',last_name:'ponce',username:'samanthaponce',password:'1234')
-user3 = User.create(first_name:'diana',last_name:'ponce',username:'dianaponce',password:'1234')
-user4 = User.create(first_name:'caryn',last_name:'mccarthy',username:'carynmccarthy',password:'1234')
-user5 = User.create(first_name:'jacky',last_name:'lin',username:'jackylin',password:'1234')
-user6 = User.create(first_name:'joseph',last_name:'cha',username:'josephcha',password:'1234')
+user1 = User.create(first_name:'Johnson',last_name:'Kow',username:'johnsonkow',password:'1234')
+user2 = User.create(first_name:'Samantha',last_name:'Ponce',username:'samanthaponce',password:'1234')
+user3 = User.create(first_name:'Diana',last_name:'Ponce',username:'dianaponce',password:'1234')
+user4 = User.create(first_name:'Caryn',last_name:'Mccarthy',username:'carynmccarthy',password:'1234')
+user5 = User.create(first_name:'Jacky',last_name:'Lin',username:'jackylin',password:'1234')
+user6 = User.create(first_name:'Joseph',last_name:'Cha',username:'josephcha',password:'1234')
+
 
 product1 = Product.create(user_id: user5.id, title:'Lady in Dress',type_of:'Nature',category:'landscape, moody, sade, dress, gloomy',price:100, image:'https://www.bleaq.com/wp-content/uploads/katharina-jung-intro.jpg')
 product2 = Product.create(user_id: user3.id, title:'Water Paradise',type_of:'Nature',category:'landscape,river,lake,bali,birds,moody',price:50, image:'https://i.pinimg.com/originals/93/c7/43/93c743fe032830d77fd6cda1679a6aac.jpg')
@@ -36,6 +37,7 @@ product13 = Product.create(user_id: user1.id, title:'Hook Thing',type_of:'Aerial
 product14 = Product.create(user_id: user1.id, title:'Red Island',type_of:'Aerial',category:'drone,nature, sunset, sunrise, lake, river',price:100, image:'https://i.pinimg.com/originals/c5/ff/e4/c5ffe451441f6c02047920e59607bb41.jpg')
 product15 = Product.create(user_id: user1.id, title:'NYC Runner',type_of:'Aerial',category:'drone,dubai, city, aerial, sand, warm',price:100, image:'https://i.pinimg.com/originals/a7/98/6b/a7986b1cd176f76f1315eafd8684b28d.jpg')
 product16 = Product.create(user_id: user1.id, title:'Autumn Court',type_of:'Aerial',category:'drone, basketball, court, nyc, manhattan, fall, orange',price:100, image:'https://themorningnews.org/images/made/retina/drone-photos-above-new-york-city-by-humza-deas.jpg')
+
 
 # product9 = Product.create(user_id: user3.id, title:'Title 7',type_of:'Nature',category:'landscape',price:300, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_2.jpg')
 # product10 = Product.create(user_id: user2.id, title:'Title 7',type_of:'Nature',category:'landscape',price:100, image:'https://mygobe.com/media/wysiwyg/infortis/ultimo/custom/Garrett_King_3.jpg')
